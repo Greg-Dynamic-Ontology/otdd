@@ -1,0 +1,71 @@
+@prefix otdd: <https://dynamicontology.com/otdd#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<https://dynamicontology.com/otdd>
+    a owl:Ontology ;
+    rdfs:label "Ontology Test-Driven Development (OTDD) Core Ontology" ;
+    rdfs:comment "Core engineering ontology for Ontology Test-Driven Development (OTDD)." .
+
+#################################################################
+# Classes
+#################################################################
+
+otdd:EngineeringArtifact
+    a owl:Class ;
+    rdfs:label "Engineering Artifact" ;
+    rdfs:comment "An artifact created or maintained during an OTDD project." .
+
+otdd:Competency
+    a owl:Class ;
+    rdfs:subClassOf otdd:EngineeringArtifact ;
+    rdfs:label "Competency" ;
+    rdfs:comment "A semantic capability that the engineering effort intends to implement and verify." .
+
+otdd:Sample
+    a owl:Class ;
+    rdfs:subClassOf otdd:EngineeringArtifact ;
+    rdfs:label "Sample" ;
+    rdfs:comment "An authoritative example used to demonstrate or verify one or more competencies." .
+
+otdd:Verification
+    a owl:Class ;
+    rdfs:subClassOf otdd:EngineeringArtifact ;
+    rdfs:label "Verification" ;
+    rdfs:comment "Evidence that a competency has been verified." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+otdd:exercisesCompetency
+    a owl:ObjectProperty ;
+    rdfs:domain otdd:Sample ;
+    rdfs:range otdd:Competency ;
+    rdfs:label "exercises competency" ;
+    rdfs:comment "Relates a sample to a competency that it demonstrates." .
+
+otdd:verifiesCompetency
+    a owl:ObjectProperty ;
+    rdfs:domain otdd:Verification ;
+    rdfs:range otdd:Competency ;
+    rdfs:label "verifies competency" ;
+    rdfs:comment "Relates a verification artifact to the competency it verifies." .
+
+#################################################################
+# Datatype Properties
+#################################################################
+
+otdd:artifactIdentifier
+    a owl:DatatypeProperty ;
+    rdfs:domain otdd:EngineeringArtifact ;
+    rdfs:range xsd:string ;
+    rdfs:label "artifact identifier" .
+
+otdd:artifactStatus
+    a owl:DatatypeProperty ;
+    rdfs:domain otdd:EngineeringArtifact ;
+    rdfs:range xsd:string ;
+    rdfs:label "artifact status" .
