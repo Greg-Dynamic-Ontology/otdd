@@ -41,6 +41,16 @@ docs/
 - Human-readable artifacts are projections of semantic engineering
   knowledge.
 
+## OTDD Series
+
+The OTDD methodology is introduced through a series of papers.
+
+- Part 1 — Engineering Knowledge Before Engineering Software
+- Part 2 — Knowledge Transformations are Knowledge
+- Part 3 — (planned)
+
+The papers are located under `docs/introduction/`.
+
 ## Relationship to UAD
 
 The UAD 3.6 Validation project serves as the first reference

@@ -4,10 +4,19 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
-<https://dynamicontology.com/otdd>
+<https://dynamicontology.com/otdd/core>
     a owl:Ontology ;
     rdfs:label "Ontology Test-Driven Development (OTDD) Core Ontology" ;
-    rdfs:comment "Core engineering ontology for Ontology Test-Driven Development (OTDD)." .
+    rdfs:comment """
+Core ontology for the Ontology Test-Driven Development (OTDD)
+methodology.
+
+This ontology defines the engineering vocabulary used by OTDD.
+It is intentionally evolved through reference implementations
+according to the OTDD principle of derivation rather than
+anticipation.
+
+""" .
 
 #################################################################
 # Classes
@@ -22,13 +31,13 @@ otdd:Competency
     a owl:Class ;
     rdfs:subClassOf otdd:EngineeringArtifact ;
     rdfs:label "Competency" ;
-    rdfs:comment "A semantic capability that the engineering effort intends to implement and verify." .
+    rdfs:comment "The smallest independently testable and traceable unit of semantic behavior." .
 
 otdd:Sample
     a owl:Class ;
     rdfs:subClassOf otdd:EngineeringArtifact ;
     rdfs:label "Sample" ;
-    rdfs:comment "An authoritative example used to demonstrate or verify one or more competencies." .
+    rdfs:comment "An example instance used to demonstrate or verify one or more semantic competencies." .
 
 otdd:Verification
     a owl:Class ;
